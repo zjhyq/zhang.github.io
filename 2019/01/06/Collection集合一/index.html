@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/zhang.github.io/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/zhang.github.io/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/zhang.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/zhang.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/zhang.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/zhang.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/zhang.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/zhang.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/zhang.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Collection,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="浅谈集合（一）在说之前我们先来了解容器，从字面上来说容器就是用来装东西的，在java中从一开始的变量来存放单个数据，到数组储存多个数据，但是数组只能存放相同类型的数据，而且数组的长度一旦确定不可改变；当存放的数据类型与个数不确定的时候数组就不太好用了，java中就提供了相关的容器； Collection 集合Collection之List可以用来储存对象，储存的数据位于堆中；当放入基本数据类型的数">
+<meta name="keywords" content="Collection">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Collection集合一">
+<meta property="og:url" content="https://zjhyq.github.io/zhang.github.io/2019/01/06/Collection集合一/index.html">
+<meta property="og:site_name" content="繁花似锦">
+<meta property="og:description" content="浅谈集合（一）在说之前我们先来了解容器，从字面上来说容器就是用来装东西的，在java中从一开始的变量来存放单个数据，到数组储存多个数据，但是数组只能存放相同类型的数据，而且数组的长度一旦确定不可改变；当存放的数据类型与个数不确定的时候数组就不太好用了，java中就提供了相关的容器； Collection 集合Collection之List可以用来储存对象，储存的数据位于堆中；当放入基本数据类型的数">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-06T03:46:27.407Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Collection集合一">
+<meta name="twitter:description" content="浅谈集合（一）在说之前我们先来了解容器，从字面上来说容器就是用来装东西的，在java中从一开始的变量来存放单个数据，到数组储存多个数据，但是数组只能存放相同类型的数据，而且数组的长度一旦确定不可改变；当存放的数据类型与个数不确定的时候数组就不太好用了，java中就提供了相关的容器； Collection 集合Collection之List可以用来储存对象，储存的数据位于堆中；当放入基本数据类型的数">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/zhang.github.io/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://zjhyq.github.io/zhang.github.io/2019/01/06/Collection集合一/">
+
+
+
+
+
+  <title>Collection集合一 | 繁花似锦</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/zhang.github.io/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">繁花似锦</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/zhang.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/zhang.github.io/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/zhang.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/zhang.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/zhang.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zjhyq.github.io/zhang.github.io/zhang.github.io/2019/01/06/Collection集合一/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="章智伟">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/zhang.github.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="繁花似锦">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Collection集合一</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-06T11:41:18+08:00">
+                2019-01-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/zhang.github.io/categories/集合/" itemprop="url" rel="index">
+                    <span itemprop="name">集合</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+	<div>
+		
+			<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------正文开始<i class="fa fa-paw"></i>阅读愉快-------------</div>
+    
+</div>
+		
+	</div>
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="浅谈集合（一）"><a href="#浅谈集合（一）" class="headerlink" title="浅谈集合（一）"></a>浅谈集合（一）</h1><p>在说之前我们先来了解容器，从字面上来说容器就是用来装东西的，在java中从一开始的变量来存放单个数据，到数组储存多个数据，但是数组只能存放相同类型的数据，而且数组的长度一旦确定不可改变；当存放的数据类型与个数不确定的时候数组就不太好用了，java中就提供了相关的容器；</p>
+<p><a href="http://wx1.sinaimg.cn/mw690/0060lm7Tly1fwepie03z6j31610jgdjr.jpg" target="_blank" rel="noopener">Collection</a></p>
+<h2 id="集合Collection之List"><a href="#集合Collection之List" class="headerlink" title="集合Collection之List"></a>集合Collection之List</h2><p>可以用来储存对象，储存的数据位于堆中；<br>当放入基本数据类型的数据时会自动转为引用数据类型；<br>例如：当存放一个int类型的数据时，会自动转为引用数据类型Intager<br>当在将其取出时Intager 会转为 int ；这就是自动拆装箱；<br>Collection 位于java.util下，是所有单列集合的父接口，Collection中也提供大量操作容器的方法；<br>​<br>public boolean add(E e)：  把给定的对象添加到当前集合中 。<br>public void clear() :清空集合中所有的元素。<br>public boolean remove(E e): 把给定的对象在当前集合中删除。<br>public boolean isEmpty(): 判断当前集合是否为空。<br>public int size(): 返回集合中元素的个数。<br>public Object[] toArray(): 把集合中的元素，存储到数组中。可以间接对集合进行遍历。</p>
+<hr>
+<div><div class="fold_hider"><div class="close hider_title">点击显/隐原代码</div></div><div class="fold">
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.Collection;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: zzy</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2018/10/20 </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Version</span> 1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CollectionTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        Collection collection = <span class="keyword">new</span> ArrayList();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//添加</span></span><br><span class="line">        ((ArrayList) collection).add(<span class="number">1</span>);</span><br><span class="line">        ((ArrayList) collection).add(<span class="string">"a"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//遍历</span></span><br><span class="line">        Object[] arr=collection.toArray();</span><br><span class="line">        System.out.println(Arrays.toString(arr));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//返回集合元素个数</span></span><br><span class="line">        System.out.println(collection.size());<span class="comment">//2</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//把指定对象删除</span></span><br><span class="line">        System.out.println(collection.remove(<span class="string">"a"</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//清空</span></span><br><span class="line">        collection.clear();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断是否包含</span></span><br><span class="line">        System.out.println(collection.contains(<span class="string">"a"</span>));<span class="comment">//false</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断集合是否为空</span></span><br><span class="line">        System.out.println(collection.isEmpty());<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</div></div>
+<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><p>List是Collecton的子接口；List是有序的，可重复的集合，元素都可以通过索引去获得；</p>
+<p>List继承了Collection的方法外也增加了新的方法：</p>
+<p>public void add(int index, E element)：将指定的元素，添加到该集合中的指定位置上。`</p>
+<p>public E set(int index, E element)`:用指定元素替换集合中指定位置的元素,返回值的更新前的元素。</p>
+<p>ArrayList 与 LinkedList 和 Vector实现了List接口；</p>
+<p>下面简单介绍三个容器中的各自的增删改查与遍历的区别；</p>
+<h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><p>ArrayList的底层是通过可变数组实现的，简单来说就是通过数组的不断拷贝，并不断扩大数组的长度；</p>
+<p>数组中的元素都有相对应的下标，由此可见ArrayList查询数据效率更高；</p>
+<hr>
+<div><div class="fold_hider"><div class="close hider_title">点击显/隐原代码</div></div><div class="fold">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">private int newCapacity(int minCapacity) &#123;</span><br><span class="line">    // overflow-conscious code</span><br><span class="line">    int oldCapacity = elementData.length;</span><br><span class="line">    int newCapacity = oldCapacity + (oldCapacity &gt;&gt; 1);</span><br><span class="line">    if (newCapacity - minCapacity &lt;= 0) &#123;</span><br><span class="line">        if (elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA)</span><br><span class="line">            return Math.max(DEFAULT_CAPACITY, minCapacity);</span><br><span class="line">        if (minCapacity &lt; 0) // overflow</span><br><span class="line">            throw new OutOfMemoryError();</span><br><span class="line">        return minCapacity;</span><br><span class="line">    &#125;</span><br><span class="line">    return (newCapacity - MAX_ARRAY_SIZE &lt;= 0)</span><br><span class="line">        ? newCapacity</span><br><span class="line">        : hugeCapacity(minCapacity);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</div></div>
+<p>在源码中我们可以看到newCapacity是在oldCapacity的基础之上扩容1.5倍；</p>
+<p>常用方法：</p>
+<p>public boolean add(E e)`：将指定的元素添加到此集合的尾部。 </p>
+<p>public E remove(int index)` ：移除此集合中指定位置上的元素。返回被删除的元素。   </p>
+<p>public E get(int index)` ：返回此集合中指定位置上的元素。返回获取的元素。</p>
+<p>public int size()` ：返回此集合中的元素数。遍历集合时，可以控制索引范围，防止越界。类似于数组里面的length属性</p>
+<p>public set(int index, E element)`:  可以设置指定位置的元素</p>
+<hr>
+<div><div class="fold_hider"><div class="close hider_title">点击显/隐代码</div></div><div class="fold">
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: zzy</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2018/10/20 </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Version</span> 1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayListTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        ArrayList&lt;String&gt;list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//增</span></span><br><span class="line">        list.add(<span class="string">"A"</span>);</span><br><span class="line">        list.add(<span class="string">"B"</span>);</span><br><span class="line">        list.add(<span class="string">"C"</span>);</span><br><span class="line">        list.add(<span class="string">"D"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//删</span></span><br><span class="line">        list.remove(<span class="string">"A"</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//获得</span></span><br><span class="line">        list.get(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//改</span></span><br><span class="line">        list.set(<span class="number">1</span>,<span class="string">"E"</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//判断是否为空</span></span><br><span class="line">        list.isEmpty();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//遍历  三种方式</span></span><br><span class="line">        <span class="comment">//普通for循环</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;list.size() ; i++) &#123;</span><br><span class="line">            System.out.println(list);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//增强for循环</span></span><br><span class="line">        <span class="keyword">for</span> (String str:list) &#123;</span><br><span class="line">            System.out.println(str);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//迭代器遍历</span></span><br><span class="line">        Iterator it = list.iterator();</span><br><span class="line">        <span class="keyword">while</span> (it.hasNext())&#123;</span><br><span class="line">            System.out.println(it.next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</div></div>
+<h3 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h3><p>LinkedList底层是双链表结构；</p>
+<p><a href="http://wx1.sinaimg.cn/mw690/0060lm7Tly1fweplsh9b8j313c0iyaae.jpg" target="_blank" rel="noopener">单链表</a></p>
+<p>如图中所示，在链表结构中，每一个节点都是一分为二，前面存放数据后面存放下一个节点的位置；而链表的最后一位没有下一节点的位置时，此时为null;</p>
+<p>像这一种称为单向链表；</p>
+<p><a href="http://wx3.sinaimg.cn/mw690/0060lm7Tly1fwepmvhpwpj313c0iy3zg.jpg" target="_blank" rel="noopener">双向链表</a></p>
+<p>而像图中这种称为双向链表，将一个节点分为三份，第一份放上一个节点的位置，中间放数据，最后放下一个节点的位置；</p>
+<p>链表结构添加数据，删除数据效率更高；因为不管添加还是删除只需知道下一节点的位置就可以更改，而且不会改变其他位置的数据，但它查询数据是从头到尾；所以查询数据效率就偏低</p>
+<p>常用方法：</p>
+<p>public void addFirst(E e)`:将指定元素插入此列表的开头。</p>
+<p>public void addLast(E e)`:将指定元素添加到此列表的结尾。</p>
+<p>public E getFirst()`:返回此列表的第一个元素。</p>
+<p>public E getLast()`:返回此列表的最后一个元素。</p>
+<p>public E removeFirst()`:移除并返回此列表的第一个元素。</p>
+<p>public E removeLast()`:移除并返回此列表的最后一个元素。</p>
+<div><div class="fold_hider"><div class="close hider_title">点击显/隐代码</div></div><div class="fold">
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.LinkedList;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: zzy</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2018/10/20 </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Version</span> 1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinkedListTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        LinkedList&lt;String&gt;linkedList = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        linkedList.addFirst(<span class="string">"添加到开头"</span>);</span><br><span class="line">        linkedList.addLast(<span class="string">"添加到结尾"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取</span></span><br><span class="line">        linkedList.getFirst();</span><br><span class="line">        linkedList.getLast();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断是否为空</span></span><br><span class="line">        linkedList.isEmpty();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (String str:linkedList)&#123;</span><br><span class="line">            System.out.println(str);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Iterator it = linkedList.iterator();</span><br><span class="line">        <span class="keyword">while</span> (it.hasNext())&#123;</span><br><span class="line">            System.out.println(it.next());</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//删除</span></span><br><span class="line">        linkedList.removeLast();</span><br><span class="line">        linkedList.removeFirst();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</div></div>
+<h3 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h3><p>vector对于学习C语言的人来说肯定是不陌生；<br>Vector的底层也是可变数组；它与ArrayList的区别是加了synchronized同步锁；线程是安全的；线程安全一般效率偏低;ArrayList与LinkedList都是线程不安全的。但是效率相对而言要高；<br>之前提过ArrayList的底层数组是以每次扩容0,5倍，而Vector是扩容1倍；</p>
+<p>常用方法：<br>add(E e)  将指定的元素追加到此Vector的末尾</p>
+<p>void add(int index, Object element)<br> 在此向量的指定位置插入指定的元素。</p>
+<p>int capacity()<br>返回此向量的当前容量。</p>
+<p>void clear()<br>从此向量中移除所有元素。</p>
+<p>boolean contains(Object elem)<br>如果此向量包含指定的元素，则返回 true。</p>
+<p>Object remove(int index)<br> 移除此向量中指定位置的元素</p>
+<p>String toString()<br>返回此向量的字符串表示形式，其中包含每个元素的 String 表示形式。</p>
+<p>add(int index, E element) 在此Vector中的指定位置插入指定的元素</p>
+<p>add(int index, E element)在此Vector中的指定位置插入指定的元素 </p>
+<div><div class="fold_hider"><div class="close hider_title">点击显/隐代码</div></div><div class="fold">
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Vector;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: zzy</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2018/10/20 11:13</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Version</span> 1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">VectorTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        Vector vector = <span class="keyword">new</span> Vector();</span><br><span class="line"></span><br><span class="line">        vector.add(<span class="number">0</span>,<span class="string">"A"</span>);</span><br><span class="line">        vector.add(<span class="number">1</span>,<span class="string">"C"</span>);</span><br><span class="line">        <span class="comment">//添加到最后</span></span><br><span class="line">        vector.add(<span class="string">"B"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//返回长度</span></span><br><span class="line">        vector.capacity();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//移除</span></span><br><span class="line">        vector.remove(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断包含</span></span><br><span class="line">        vector.contains(<span class="string">"B"</span>);<span class="comment">//false</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//字符串表示</span></span><br><span class="line">        System.out.println(vector.toString());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//清空</span></span><br><span class="line">        vector.clear();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</div></div>
+
+      
+    </div>
+    
+    
+    
+	
+	
+	
+    
+	
+	<div>
+		
+			
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/zhang.github.io/2019/01/06/Collection集合一/">Collection集合一</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 章智伟 的个人博客">章智伟</a></p>
+  <p><span>发布时间:</span>2019年01月06日 - 11:41</p>
+  <p><span>最后更新:</span>2019年01月06日 - 11:46</p>
+  <p><span>原始链接:</span><a href="/zhang.github.io/2019/01/06/Collection集合一/" title="Collection集合一">https://zjhyq.github.io/zhang.github.io/2019/01/06/Collection集合一/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://zjhyq.github.io/zhang.github.io/2019/01/06/Collection集合一/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+	});
+    });  
+</script>
+
+		
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/zhang.github.io/tags/Collection/" <i="" class="fa fa-tag"> Collection</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/zhang.github.io/2019/01/05/从oop到ooa/" rel="next" title="从oop到ooa">
+                <i class="fa fa-chevron-left"></i> 从oop到ooa
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/zhang.github.io/images/avatar.jpg" alt="章智伟">
+            
+              <p class="site-author-name" itemprop="name">章智伟</p>
+              <p class="site-description motion-element" itemprop="description">欲戴其冠必承其重</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/zhang.github.io/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/zhang.github.io/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/zhang.github.io/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#浅谈集合（一）"><span class="nav-number">1.</span> <span class="nav-text">浅谈集合（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#集合Collection之List"><span class="nav-number">1.1.</span> <span class="nav-text">集合Collection之List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List"><span class="nav-number">1.2.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList"><span class="nav-number">1.2.1.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LinkedList"><span class="nav-number">1.2.2.</span> <span class="nav-text">LinkedList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vector"><span class="nav-number">1.2.3.</span> <span class="nav-text">Vector</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">章智伟</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">2.8k</span>
+  
+</div>
+
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共2.8k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/zhang.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/zhang.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/zhang.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/zhang.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/zhang.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/zhang.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="true"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/zhang.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/zhang.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/zhang.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/zhang.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/zhang.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/zhang.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+
+  
+
+
+  <script type="text/javascript" src="/zhang.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/zhang.github.io/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
