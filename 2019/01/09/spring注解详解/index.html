@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="顺其自然">
 <meta property="og:description" content="spring中的注解(一)springMVC中注解​    在了解springMVC注解之前,我们先了解springMVC的架构流程 ​        1:用户发送请求到DispatcherServlet控制器(以下简称控制器) ​        2:控制器通过请求的路径在HandlerMapping映射器中查询handler处理器 ​        3:映射器再根据用户的请求查找相对应的Hand">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-10T05:22:28.008Z">
+<meta property="og:updated_time" content="2019-01-10T05:24:48.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spring注解详解(一)">
 <meta name="twitter:description" content="spring中的注解(一)springMVC中注解​    在了解springMVC注解之前,我们先了解springMVC的架构流程 ​        1:用户发送请求到DispatcherServlet控制器(以下简称控制器) ​        2:控制器通过请求的路径在HandlerMapping映射器中查询handler处理器 ​        3:映射器再根据用户的请求查找相对应的Hand">
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  976
+                  974
                 </span>
               
 
@@ -527,11 +527,11 @@
 </tbody>
 </table>
 <hr>
-<div><div class="fold_hider"><div class="close hider_title">点击显/隐代码</div></div><div class="fold">
+<div><div class="fold_hider"><div class="close hider_title">点击**@Resource**</div></div><div class="fold">
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span>  <span class="keyword">implements</span> <span class="title">IUserService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">   <span class="keyword">private</span> BasUserMapper basUserMapper;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@Resource</span>(name=<span class="string">"redisTemplate"</span>)</span><br><span class="line">    <span class="keyword">private</span> ValueOperations&lt;String,Object&gt; valueOperations;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </div></div>
-<div><div class="fold_hider"><div class="close hider_title">点击显/隐代码</div></div><div class="fold">
+<div><div class="fold_hider"><div class="close hider_title">点击**@Autowired**显/隐代码</div></div><div class="fold">
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CusDevPlanService</span> <span class="keyword">extends</span> <span class="title">BaseService</span>&lt;<span class="title">CusDevPlan</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> CusDevPlanMapper cusDevPlanMapper;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
 </div></div>
@@ -573,7 +573,7 @@
   <p><span>本文标题:</span><a href="/2019/01/09/spring注解详解/">spring注解详解(一)</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 zhang 的个人博客">zhang</a></p>
   <p><span>发布时间:</span>2019年01月09日 - 18:26</p>
-  <p><span>最后更新:</span>2019年01月10日 - 13:22</p>
+  <p><span>最后更新:</span>2019年01月10日 - 13:24</p>
   <p><span>原始链接:</span><a href="/2019/01/09/spring注解详解/" title="spring注解详解(一)">https://www.zhang8621.top/2019/01/09/spring注解详解/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.zhang8621.top/2019/01/09/spring注解详解/" aria-label="复制成功！"></i></span>
   </p>
