@@ -102,18 +102,18 @@
 
 
 
-<meta name="description" content="spring中的注解1:springMVC中注解​    在了解springMVC注解之前,我们先了解springMVC的架构流程 ​        1:用户发送请求到DispatcherServlet控制器(以下简称控制器) ​        2:控制器通过请求的路径在HandlerMapping映射器中查询handler处理器 ​        3:映射器再根据用户的请求查找相对应的Handl">
+<meta name="description" content="spring中的注解(一)springMVC中注解​    在了解springMVC注解之前,我们先了解springMVC的架构流程 ​        1:用户发送请求到DispatcherServlet控制器(以下简称控制器) ​        2:控制器通过请求的路径在HandlerMapping映射器中查询handler处理器 ​        3:映射器再根据用户的请求查找相对应的Hand">
 <meta name="keywords" content="spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="spring注解详解">
+<meta property="og:title" content="spring注解详解(一)">
 <meta property="og:url" content="https://www.zhang8621.top/2019/01/09/spring注解详解/index.html">
 <meta property="og:site_name" content="顺其自然">
-<meta property="og:description" content="spring中的注解1:springMVC中注解​    在了解springMVC注解之前,我们先了解springMVC的架构流程 ​        1:用户发送请求到DispatcherServlet控制器(以下简称控制器) ​        2:控制器通过请求的路径在HandlerMapping映射器中查询handler处理器 ​        3:映射器再根据用户的请求查找相对应的Handl">
+<meta property="og:description" content="spring中的注解(一)springMVC中注解​    在了解springMVC注解之前,我们先了解springMVC的架构流程 ​        1:用户发送请求到DispatcherServlet控制器(以下简称控制器) ​        2:控制器通过请求的路径在HandlerMapping映射器中查询handler处理器 ​        3:映射器再根据用户的请求查找相对应的Hand">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-10T03:54:24.320Z">
+<meta property="og:updated_time" content="2019-01-10T05:22:28.008Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="spring注解详解">
-<meta name="twitter:description" content="spring中的注解1:springMVC中注解​    在了解springMVC注解之前,我们先了解springMVC的架构流程 ​        1:用户发送请求到DispatcherServlet控制器(以下简称控制器) ​        2:控制器通过请求的路径在HandlerMapping映射器中查询handler处理器 ​        3:映射器再根据用户的请求查找相对应的Handl">
+<meta name="twitter:title" content="spring注解详解(一)">
+<meta name="twitter:description" content="spring中的注解(一)springMVC中注解​    在了解springMVC注解之前,我们先了解springMVC的架构流程 ​        1:用户发送请求到DispatcherServlet控制器(以下简称控制器) ​        2:控制器通过请求的路径在HandlerMapping映射器中查询handler处理器 ​        3:映射器再根据用户的请求查找相对应的Hand">
 
 
 
@@ -149,7 +149,7 @@
 
 
 
-  <title>spring注解详解 | 顺其自然</title>
+  <title>spring注解详解(一) | 顺其自然</title>
   
 
 
@@ -325,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">spring注解详解</h1>
+          <h1 class="post-title" itemprop="name headline">spring注解详解(一)</h1>
         
 
         <div class="post-meta">
@@ -360,8 +360,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/spring注解/" itemprop="url" rel="index">
-                    <span itemprop="name">spring注解</span>
+                  <a href="/categories/spring注解-springMVC/" itemprop="url" rel="index">
+                    <span itemprop="name">spring注解 ,springMVC</span>
                   </a>
                 </span>
 
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  846
+                  976
                 </span>
               
 
@@ -437,7 +437,7 @@
       
 
       
-        <h1 id="spring中的注解"><a href="#spring中的注解" class="headerlink" title="spring中的注解"></a>spring中的注解</h1><h2 id="1-springMVC中注解"><a href="#1-springMVC中注解" class="headerlink" title="1:springMVC中注解"></a>1:springMVC中注解</h2><p>​    在了解springMVC注解之前,我们先了解springMVC的架构流程</p>
+        <h1 id="spring中的注解-一"><a href="#spring中的注解-一" class="headerlink" title="spring中的注解(一)"></a>spring中的注解(一)</h1><h2 id="springMVC中注解"><a href="#springMVC中注解" class="headerlink" title="springMVC中注解"></a>springMVC中注解</h2><p>​    在了解springMVC注解之前,我们先了解springMVC的架构流程</p>
 <p>​        1:用户发送请求到DispatcherServlet控制器(以下简称控制器)</p>
 <p>​        2:控制器通过请求的路径在HandlerMapping映射器中查询handler处理器</p>
 <p>​        3:映射器再根据用户的请求查找相对应的HandleExecutionChain执行链传向控制器</p>
@@ -527,12 +527,29 @@
 </tbody>
 </table>
 <hr>
-<p>@Resource</p>
-<p>***<div><div class="fold_hider"><div class="close hider_title">点击显/隐代码</div></div><div class="fold">
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class UserServiceImpl  implements IUserService &#123;</span><br><span class="line"></span><br><span class="line">    @Resource</span><br><span class="line">    private BasUserMapper basUserMapper;</span><br><span class="line"></span><br><span class="line">    @Resource(name=&quot;redisTemplate&quot;)</span><br><span class="line">    private ValueOperations&lt;String,Object&gt; valueOperations;</span><br></pre></td></tr></table></figure>
+<div><div class="fold_hider"><div class="close hider_title">点击显/隐代码</div></div><div class="fold">
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span>  <span class="keyword">implements</span> <span class="title">IUserService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">   <span class="keyword">private</span> BasUserMapper basUserMapper;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@Resource</span>(name=<span class="string">"redisTemplate"</span>)</span><br><span class="line">    <span class="keyword">private</span> ValueOperations&lt;String,Object&gt; valueOperations;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-</div></div></p>
+</div></div>
+<div><div class="fold_hider"><div class="close hider_title">点击显/隐代码</div></div><div class="fold">
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CusDevPlanService</span> <span class="keyword">extends</span> <span class="title">BaseService</span>&lt;<span class="title">CusDevPlan</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> CusDevPlanMapper cusDevPlanMapper;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+</div></div>
+<h4 id="4-ResponseBody与-RequestBody"><a href="#4-ResponseBody与-RequestBody" class="headerlink" title="4:@ResponseBody与@RequestBody"></a>4:@ResponseBody与@RequestBody</h4><table>
+<thead>
+<tr>
+<th>@ResponseBody</th>
+<th>这个注解通常使用与方法上与@RequestMapping()一起使用,将该方法的返回值写入HTTP response body中;一般用于异步获取数据;         @ResponseBody将Controller的返回值通过HttpMessageConverter转换为指定格式后,写入HTTP response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@RequestBody</td>
+<td>这个注解通常用于后端接收前台传入数据,使用HttpMessageConverter解析,最后将HttpMessageConverten返回的数据对象传递到controller的方法形参上</td>
+</tr>
+</tbody>
+</table>
+<p>​    </p>
 
       
     </div>
@@ -553,11 +570,11 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/01/09/spring注解详解/">spring注解详解</a></p>
+  <p><span>本文标题:</span><a href="/2019/01/09/spring注解详解/">spring注解详解(一)</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 zhang 的个人博客">zhang</a></p>
   <p><span>发布时间:</span>2019年01月09日 - 18:26</p>
-  <p><span>最后更新:</span>2019年01月10日 - 11:54</p>
-  <p><span>原始链接:</span><a href="/2019/01/09/spring注解详解/" title="spring注解详解">https://www.zhang8621.top/2019/01/09/spring注解详解/</a>
+  <p><span>最后更新:</span>2019年01月10日 - 13:22</p>
+  <p><span>原始链接:</span><a href="/2019/01/09/spring注解详解/" title="spring注解详解(一)">https://www.zhang8621.top/2019/01/09/spring注解详解/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.zhang8621.top/2019/01/09/spring注解详解/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
@@ -795,7 +812,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spring中的注解"><span class="nav-number">1.</span> <span class="nav-text">spring中的注解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-springMVC中注解"><span class="nav-number">1.1.</span> <span class="nav-text">1:springMVC中注解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Controller"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">1:@Controller</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-RequestMapping"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">2:@RequestMapping()</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#常用属性"><span class="nav-number">1.1.0.2.0.1.</span> <span class="nav-text">常用属性:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Resource与-Autowired"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">3:@Resource与@Autowired</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spring中的注解-一"><span class="nav-number">1.</span> <span class="nav-text">spring中的注解(一)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#springMVC中注解"><span class="nav-number">1.1.</span> <span class="nav-text">springMVC中注解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Controller"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">1:@Controller</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-RequestMapping"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">2:@RequestMapping()</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#常用属性"><span class="nav-number">1.1.0.2.0.1.</span> <span class="nav-text">常用属性:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Resource与-Autowired"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">3:@Resource与@Autowired</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-ResponseBody与-RequestBody"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">4:@ResponseBody与@RequestBody</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -838,7 +855,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.6k</span>
+    <span title="Site words total count">3.8k</span>
   
 </div>
 
@@ -862,7 +879,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.6k字</span>
+  <span class="post-count">博客全站共3.8k字</span>
 </div>
 
         
