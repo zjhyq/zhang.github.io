@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="顺其自然">
 <meta property="og:description" content="spring中的注解(一)springMVC中注解​    在了解springMVC注解之前,我们先了解springMVC的架构流程 ​        1:用户发送请求到DispatcherServlet控制器(以下简称控制器) ​        2:控制器通过请求的路径在HandlerMapping映射器中查询handler处理器 ​        3:映射器再根据用户的请求查找相对应的Hand">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-10T06:05:52.227Z">
+<meta property="og:updated_time" content="2019-01-10T10:30:44.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spring注解详解(一)">
 <meta name="twitter:description" content="spring中的注解(一)springMVC中注解​    在了解springMVC注解之前,我们先了解springMVC的架构流程 ​        1:用户发送请求到DispatcherServlet控制器(以下简称控制器) ​        2:控制器通过请求的路径在HandlerMapping映射器中查询handler处理器 ​        3:映射器再根据用户的请求查找相对应的Hand">
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k
+                  1.3k
                 </span>
               
 
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -565,7 +565,13 @@
 
 </div></div>
 <hr>
-<h4 id="5-PathVariable"><a href="#5-PathVariable" class="headerlink" title="5:@PathVariable"></a>5:@PathVariable</h4><h4 id="6-requestParam"><a href="#6-requestParam" class="headerlink" title="6:@requestParam"></a>6:@requestParam</h4><h4 id="7-ModelAttribute和-SessionAttributes"><a href="#7-ModelAttribute和-SessionAttributes" class="headerlink" title="7:@ModelAttribute和 @SessionAttributes"></a>7:@ModelAttribute和 @SessionAttributes</h4>
+<h4 id="5-PathVariable与-requestParam"><a href="#5-PathVariable与-requestParam" class="headerlink" title="5:@PathVariable与@requestParam"></a>5:@PathVariable与@requestParam</h4><p> @PathVariable 将 路径当做参数,URL 中占位符参数绑定到控制器处理方法的形参中;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(&quot;login/&#123;id&#125;/&#123;pwd&#125;&quot;)</span><br><span class="line">@ResponseBody</span><br><span class="line">public String test(@PathVariable(&quot;id&quot;) String id,@PathVariable(&quot;pwd&quot;) String pwd)&#123;</span><br><span class="line">	return &quot;root&quot;+&quot;1234&quot; ;</span><br><span class="line">&#125;</span><br><span class="line">//访问http:8080/login/id/pwd</span><br><span class="line">//root1234</span><br></pre></td></tr></table></figure>
+<p>@requestParam是从请求里面获取参数。</p>
+<p>例如 Get请求 <a href="http://localhost:8080/login?/id=root&amp;name=root" target="_blank" rel="noopener">http://localhost:8080/login?/id=root&amp;name=root</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(value=<span class="string">"login"</span>)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">test</span><span class="params">(@requestParam(<span class="string">"id"</span>)</span> String id,@<span class="title">requestParam</span><span class="params">(<span class="string">"name"</span>)</span> String name)</span>&#123;</span><br><span class="line">	System.out.println(<span class="string">"id :"</span>+id+<span class="string">" name :"</span>+name);</span><br><span class="line">&#125;</span><br><span class="line">输出id:root name:root</span><br></pre></td></tr></table></figure>
+<p>未完待续…</p>
+
       
     </div>
     
@@ -588,7 +594,7 @@
   <p><span>本文标题:</span><a href="/2019/01/09/spring注解详解/">spring注解详解(一)</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 zhang 的个人博客">zhang</a></p>
   <p><span>发布时间:</span>2019年01月09日 - 18:26</p>
-  <p><span>最后更新:</span>2019年01月10日 - 14:05</p>
+  <p><span>最后更新:</span>2019年01月10日 - 18:30</p>
   <p><span>原始链接:</span><a href="/2019/01/09/spring注解详解/" title="spring注解详解(一)">https://www.zhang8621.top/2019/01/09/spring注解详解/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.zhang8621.top/2019/01/09/spring注解详解/" aria-label="复制成功！"></i></span>
   </p>
@@ -827,7 +833,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spring中的注解-一"><span class="nav-number">1.</span> <span class="nav-text">spring中的注解(一)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#springMVC中注解"><span class="nav-number">1.1.</span> <span class="nav-text">springMVC中注解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Controller与-Service与-Component与-Repository"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">1:@Controller与@Service与@Component与@Repository</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-RequestMapping"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">2:@RequestMapping()</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#常用属性"><span class="nav-number">1.1.0.2.0.1.</span> <span class="nav-text">常用属性:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Resource与-Autowired"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">3:@Resource与@Autowired</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-ResponseBody与-RequestBody"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">4:@ResponseBody与@RequestBody</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-PathVariable"><span class="nav-number">1.1.0.5.</span> <span class="nav-text">5:@PathVariable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-requestParam"><span class="nav-number">1.1.0.6.</span> <span class="nav-text">6:@requestParam</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-ModelAttribute和-SessionAttributes"><span class="nav-number">1.1.0.7.</span> <span class="nav-text">7:@ModelAttribute和 @SessionAttributes</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spring中的注解-一"><span class="nav-number">1.</span> <span class="nav-text">spring中的注解(一)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#springMVC中注解"><span class="nav-number">1.1.</span> <span class="nav-text">springMVC中注解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Controller与-Service与-Component与-Repository"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">1:@Controller与@Service与@Component与@Repository</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-RequestMapping"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">2:@RequestMapping()</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#常用属性"><span class="nav-number">1.1.0.2.0.1.</span> <span class="nav-text">常用属性:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Resource与-Autowired"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">3:@Resource与@Autowired</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-ResponseBody与-RequestBody"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">4:@ResponseBody与@RequestBody</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-PathVariable与-requestParam"><span class="nav-number">1.1.0.5.</span> <span class="nav-text">5:@PathVariable与@requestParam</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -870,7 +876,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3k</span>
+    <span title="Site words total count">3.1k</span>
   
 </div>
 
@@ -894,7 +900,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3k字</span>
+  <span class="post-count">博客全站共3.1k字</span>
 </div>
 
         
