@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="顺其自然">
 <meta property="og:description" content="spring中的注解1:springMVC中注解​    在了解springMVC注解之前,我们先了解springMVC的架构流程 ​        1:用户发送请求到DispatcherServlet控制器(以下简称控制器) ​        2:控制器通过请求的路径在HandlerMapping映射器中查询handler处理器 ​        3:映射器再根据用户的请求查找相对应的Handl">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-09T16:18:40.094Z">
+<meta property="og:updated_time" content="2019-01-10T03:49:35.048Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spring注解详解">
 <meta name="twitter:description" content="spring中的注解1:springMVC中注解​    在了解springMVC注解之前,我们先了解springMVC的架构流程 ​        1:用户发送请求到DispatcherServlet控制器(以下简称控制器) ​        2:控制器通过请求的路径在HandlerMapping映射器中查询handler处理器 ​        3:映射器再根据用户的请求查找相对应的Handl">
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  723
+                  844
                 </span>
               
 
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -516,17 +516,22 @@
 <thead>
 <tr>
 <th style="text-align:center">@Resource</th>
-<th>默认通过byName自动注入;name与type时@Resource的属性;</th>
+<th>默认通过byName自动注入;name与type时@Resource的属性;spring将name属性解析为bean的名字,type属性解析为bean的类型,使用什么属性时就默认使用什么属性注入,都不使用下默认通过反射机制byname自动注入</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center">@Autowired</td>
-<td>默认通过byType自动注入</td>
+<td>默认通过byType自动注入,默认情况下依赖必须存在,如果允许null值,则设置required属性为false,如果想要使用name属性则配合@Qualifier注解</td>
 </tr>
 </tbody>
 </table>
+<hr>
+<p>@Resource</p>
+<div><div class="fold_hider"><div class="close hider_title">点击显/隐代码</div></div><div class="fold">
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span>  <span class="keyword">implements</span> <span class="title">IUserService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> BasUserMapper basUserMapper;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span>(name=<span class="string">"redisTemplate"</span>)</span><br><span class="line">    <span class="keyword">private</span> ValueOperations&lt;String,Object&gt; valueOperations;</span><br></pre></td></tr></table></figure>
 
+</div></div>
       
     </div>
     
@@ -549,7 +554,7 @@
   <p><span>本文标题:</span><a href="/2019/01/09/spring注解详解/">spring注解详解</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 zhang 的个人博客">zhang</a></p>
   <p><span>发布时间:</span>2019年01月09日 - 18:26</p>
-  <p><span>最后更新:</span>2019年01月10日 - 00:18</p>
+  <p><span>最后更新:</span>2019年01月10日 - 11:49</p>
   <p><span>原始链接:</span><a href="/2019/01/09/spring注解详解/" title="spring注解详解">https://www.zhang8621.top/2019/01/09/spring注解详解/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.zhang8621.top/2019/01/09/spring注解详解/" aria-label="复制成功！"></i></span>
   </p>
@@ -831,7 +836,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.5k</span>
+    <span title="Site words total count">3.6k</span>
   
 </div>
 
@@ -855,7 +860,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.5k字</span>
+  <span class="post-count">博客全站共3.6k字</span>
 </div>
 
         
