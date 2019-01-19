@@ -91,7 +91,7 @@
 
 
 
-  <meta name="keywords" content="java,">
+  <meta name="keywords" content="spring,dubbo,SOA,">
 
 
 
@@ -102,18 +102,21 @@
 
 
 
-<meta name="description" content="从OOP—》OOA—》OOD—》OOP6大设计原则：   单一职责原则： 引起一个类发生变化的因素不要超过一个；一个类只能有一                                            种职责，类中可以有多个方法     开闭原则： 对扩展开放，对修改关闭，再不改变类的前提下扩展一个类的职能；低耦合，高内聚！   里氏替换原则 任何父类的引用的函数必须能使用继承类的对象">
-<meta name="keywords" content="java">
+<meta name="description" content="SOA架构​    SOA(Service-Oriented Architecture)面向服务架构,是当前大部分企业运用相对广泛的架构方式之一; 随互联网的迅速发展,系统架构也因其带来的压力而不断发展,从单一的集中式架构因代码高度耦合,维护扩展困难到垂直拆分因功能之间的相对独立,功能之间重复的代码高度冗余,再到分布式的服务,SOA架构使功能之间的代码可以相互调用,之后就到了微服务;SOA架构相较">
+<meta name="keywords" content="spring,dubbo,SOA">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从oop到ooa">
-<meta property="og:url" content="https://www.zhang8621.top/2019/01/05/从oop到ooa/index.html">
+<meta property="og:title" content="SOA架构">
+<meta property="og:url" content="https://www.zhang8621.top/2019/01/14/SOA架构/index.html">
 <meta property="og:site_name" content="顺其自然">
-<meta property="og:description" content="从OOP—》OOA—》OOD—》OOP6大设计原则：   单一职责原则： 引起一个类发生变化的因素不要超过一个；一个类只能有一                                            种职责，类中可以有多个方法     开闭原则： 对扩展开放，对修改关闭，再不改变类的前提下扩展一个类的职能；低耦合，高内聚！   里氏替换原则 任何父类的引用的函数必须能使用继承类的对象">
+<meta property="og:description" content="SOA架构​    SOA(Service-Oriented Architecture)面向服务架构,是当前大部分企业运用相对广泛的架构方式之一; 随互联网的迅速发展,系统架构也因其带来的压力而不断发展,从单一的集中式架构因代码高度耦合,维护扩展困难到垂直拆分因功能之间的相对独立,功能之间重复的代码高度冗余,再到分布式的服务,SOA架构使功能之间的代码可以相互调用,之后就到了微服务;SOA架构相较">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-05T16:00:37.292Z">
+<meta property="og:image" content="e:/myblog/source/images/5.png">
+<meta property="og:image" content="e:/myblog/source/images/6.png">
+<meta property="og:updated_time" content="2019-01-15T01:22:58.364Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="从oop到ooa">
-<meta name="twitter:description" content="从OOP—》OOA—》OOD—》OOP6大设计原则：   单一职责原则： 引起一个类发生变化的因素不要超过一个；一个类只能有一                                            种职责，类中可以有多个方法     开闭原则： 对扩展开放，对修改关闭，再不改变类的前提下扩展一个类的职能；低耦合，高内聚！   里氏替换原则 任何父类的引用的函数必须能使用继承类的对象">
+<meta name="twitter:title" content="SOA架构">
+<meta name="twitter:description" content="SOA架构​    SOA(Service-Oriented Architecture)面向服务架构,是当前大部分企业运用相对广泛的架构方式之一; 随互联网的迅速发展,系统架构也因其带来的压力而不断发展,从单一的集中式架构因代码高度耦合,维护扩展困难到垂直拆分因功能之间的相对独立,功能之间重复的代码高度冗余,再到分布式的服务,SOA架构使功能之间的代码可以相互调用,之后就到了微服务;SOA架构相较">
+<meta name="twitter:image" content="e:/myblog/source/images/5.png">
 
 
 
@@ -143,13 +146,13 @@
 
 
 
-  <link rel="canonical" href="https://www.zhang8621.top/2019/01/05/从oop到ooa/">
+  <link rel="canonical" href="https://www.zhang8621.top/2019/01/14/SOA架构/">
 
 
 
 
 
-  <title>从oop到ooa | 顺其自然</title>
+  <title>SOA架构 | 顺其自然</title>
   
 
 
@@ -308,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.zhang8621.top/2019/01/05/从oop到ooa/">
+    <link itemprop="mainEntityOfPage" href="https://www.zhang8621.top/2019/01/14/SOA架构/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhang">
@@ -325,7 +328,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">从oop到ooa</h1>
+          <h1 class="post-title" itemprop="name headline">SOA架构</h1>
         
 
         <div class="post-meta">
@@ -337,8 +340,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-05T23:58:33+08:00">
-                2019-01-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-14T21:22:01+08:00">
+                2019-01-14
               </time>
             
 
@@ -369,7 +372,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  973
+                  405
                 </span>
               
 
@@ -385,7 +388,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  1
                 </span>
               
             </div>
@@ -415,117 +418,20 @@
       
 
       
-        <h1 id="从OOP—》OOA—》OOD—》OOP"><a href="#从OOP—》OOA—》OOD—》OOP" class="headerlink" title="从OOP—》OOA—》OOD—》OOP"></a>从OOP—》OOA—》OOD—》OOP</h1><h2 id="6大设计原则："><a href="#6大设计原则：" class="headerlink" title="6大设计原则："></a>6大设计原则：</h2><table>
-<thead>
-<tr>
-<th>单一职责原则：</th>
-<th>引起一个类发生变化的因素不要超过一个；一个类只能有一                                            种职责，类中可以有多个方法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>开闭原则：</td>
-<td>对扩展开放，对修改关闭，再不改变类的前提下扩展一个类的职能；低耦合，高内聚！</td>
-</tr>
-<tr>
-<td>里氏替换原则</td>
-<td>任何父类的引用的函数必须能使用继承类的对象，保证继承能正确使用方法</td>
-</tr>
-<tr>
-<td>接口分离原则</td>
-<td>类的依赖关系应当建立在最小的接口，接口应当只包含不同类中的共同方法；</td>
-</tr>
-<tr>
-<td>依赖倒置原则：{是开闭原则的前提}</td>
-<td>低层模块：不可分割原子性，高层模块：低层模块的再组合，对低层模块的抽象，抽象：接口或抽象类实现类：低层模块的具体实实现类：</td>
-</tr>
-<tr>
-<td>迪米特原则：</td>
-<td>类与类之间因有不可见，封装</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">暂时理解：面向接口编程，函数式编程</span><br></pre></td></tr></table></figure>
-<p>模块间的依赖通过抽象类或接口产生，实现类之间的依赖关系也是通过抽象类或接口产生（要求：实现类之间应当不发生直接依赖关系），已达到降低系统的低耦合</p>
-<p>接口或抽象类不依赖与实现类，但实现类依赖接口和抽象类，以实现类对系统功能具体体现，已达到更高的高内聚</p>
-<h1 id="OOA面向对象分析"><a href="#OOA面向对象分析" class="headerlink" title="OOA面向对象分析"></a>OOA面向对象分析</h1><h2 id="理解问题与需求架构-简单而言"><a href="#理解问题与需求架构-简单而言" class="headerlink" title="理解问题与需求架构{简单而言}"></a>理解问题与需求架构{简单而言}</h2><p>1：完成用户要求系统应提供哪些功能</p>
-<p>2：系统应该有哪些对象构成</p>
-<p>3：每个对象应有哪些属性和服务（功能）</p>
-<p>4：对象之间应当建立怎样的联系</p>
-<table>
-<thead>
-<tr>
-<th>五种层次</th>
-<th>五种活动</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>主题层</td>
-<td>标识类对象</td>
-<td></td>
-</tr>
-<tr>
-<td>对象类层</td>
-<td>标识结构</td>
-<td></td>
-</tr>
-<tr>
-<td>结构层</td>
-<td>定义主题</td>
-<td></td>
-</tr>
-<tr>
-<td>属性层</td>
-<td>定义属性</td>
-<td>要知道一个类与另一个类的实例映射关系</td>
-</tr>
-<tr>
-<td>服务层</td>
-<td>定义服务</td>
-<td>一个对象需要对另一个对象发送消息</td>
-</tr>
-</tbody>
-</table>
-<p>从而定义两种对象类之间的结构；</p>
-<p>1：分类结构 一般与特殊的关系</p>
-<p>2：组合结构 对象之间整体与部分的关系</p>
-<h2 id="如何做："><a href="#如何做：" class="headerlink" title="如何做："></a>如何做：</h2><p>1：抽象：    从多个事物中舍弃个别的，非本质的特征，抽取共同的，本质性的特征。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">数据抽象：简单来说就是的（数据和操作）属性与功能结合为一个系统单位（对象），对象为不不需要知道对象内部有什么。</span><br><span class="line"></span><br><span class="line">过程抽象： 任何一个完成确定功能的方法，都应该看作是一个单一的实体，不必在乎内部是低级操作完成</span><br></pre></td></tr></table></figure>
-<p>2：封装：把对象的属性与服务结合到一个不可分的系统单位（类）隐藏内部细节</p>
-<p>3：继承：子类对象拥有父类的所有属性以及功能</p>
-<p>4：分类：把属性与服务相同的对象分为一类，用类来作为对象的抽象描述</p>
-<p>5：聚合：把一个复杂的事物看成是若干个比较简单的事物组成的，简化对事物的描述</p>
-<p>6：关联；通过一个事物想到另一个事物，是因为事物之间有联系</p>
-<p>7：消息通信：对象中间通过信息传递，不允许在对象之外获得联系（即封装）</p>
-<p>8：粒度控制：在考虑全局时，注意大的组成部分，暂时不看小的具体细节；考虑某部分细节时，暂时撇开其余组成部分</p>
-<p>9：行为分析：</p>
-<h3 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h3><table>
-<thead>
-<tr>
-<th>确定对象和类</th>
-<th>类是多个对象的共同属性和方法的集合</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>确定结构</td>
-<td></td>
-</tr>
-<tr>
-<td>确定主题</td>
-<td></td>
-</tr>
-<tr>
-<td>确定属性</td>
-<td></td>
-</tr>
-<tr>
-<td>确定方法</td>
-</tr>
-</tbody>
-</table>
+        <h2 id="SOA架构"><a href="#SOA架构" class="headerlink" title="SOA架构"></a>SOA架构</h2><p>​    SOA(Service-Oriented Architecture)面向服务架构,是当前大部分企业运用相对广泛的架构方式之一;</p>
+<p>随互联网的迅速发展,系统架构也因其带来的压力而不断发展,从单一的集中式架构因代码高度耦合,维护扩展困难到垂直拆分因功能之间的相对独立,功能之间重复的代码高度冗余,再到分布式的服务,SOA架构使功能之间的代码可以相互调用,之后就到了微服务;SOA架构相较于即将流行的微服务而言服务粒度较粗,那么什么是服务粒度呢?</p>
+<p>集中式架构</p>
+<p><img src="E:\myblog\source\images\5.png" alt=""></p>
+<p>垂直架构</p>
+<p>分布式架构</p>
+<p><img src="E:\myblog\source\images\6.png" alt=""></p>
+<p>​    服务粒度通常而言是一个服务所包含的内容,对外暴露的服务接口大小;比如所基于SOA项目搭建的p2p项目,用户对基金购买操作可能就是暴露在外的一个粗服务接口,而相较于这一服务内部的用户订单表生成.扣取金额的用户数据更新操作就是细粒度的服务;也就是说微服务相较于SOA架构,它将服务都一个一个细小的划分出对应的业务;</p>
+<ul>
+<li>服务注册中心，实现服务自动注册和发现，无需人为记录服务地址</li>
+<li>服务自动订阅，服务列表自动推送，服务调用透明化，无需关心依赖关系</li>
+<li>动态监控服务状态监控报告，人为控制服务状态</li>
+</ul>
+<p>​    </p>
 
       
     </div>
@@ -546,12 +452,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/01/05/从oop到ooa/">从oop到ooa</a></p>
+  <p><span>本文标题:</span><a href="/2019/01/14/SOA架构/">SOA架构</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 zhang 的个人博客">zhang</a></p>
-  <p><span>发布时间:</span>2019年01月05日 - 23:58</p>
-  <p><span>最后更新:</span>2019年01月06日 - 00:00</p>
-  <p><span>原始链接:</span><a href="/2019/01/05/从oop到ooa/" title="从oop到ooa">https://www.zhang8621.top/2019/01/05/从oop到ooa/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.zhang8621.top/2019/01/05/从oop到ooa/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年01月14日 - 21:22</p>
+  <p><span>最后更新:</span>2019年01月15日 - 09:22</p>
+  <p><span>原始链接:</span><a href="/2019/01/14/SOA架构/" title="SOA架构">https://www.zhang8621.top/2019/01/14/SOA架构/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.zhang8621.top/2019/01/14/SOA架构/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -580,7 +486,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" <i="" class="fa fa-tag"> java</a>
+            <a href="/tags/spring-dubbo-SOA/" <i="" class="fa fa-tag"> spring,dubbo,SOA</a>
           
         </div>
       
@@ -593,15 +499,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/01/14/设计模式解析/" rel="next" title="设计模式解析">
+                <i class="fa fa-chevron-left"></i> 设计模式解析
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/06/Collection集合一/" rel="prev" title="Collection集合一">
-                Collection集合一 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -711,7 +617,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -733,7 +639,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -788,7 +694,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#从OOP—》OOA—》OOD—》OOP"><span class="nav-number">1.</span> <span class="nav-text">从OOP—》OOA—》OOD—》OOP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6大设计原则："><span class="nav-number">1.1.</span> <span class="nav-text">6大设计原则：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OOA面向对象分析"><span class="nav-number">2.</span> <span class="nav-text">OOA面向对象分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#理解问题与需求架构-简单而言"><span class="nav-number">2.1.</span> <span class="nav-text">理解问题与需求架构{简单而言}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何做："><span class="nav-number">2.2.</span> <span class="nav-text">如何做：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤："><span class="nav-number">2.2.1.</span> <span class="nav-text">步骤：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SOA架构"><span class="nav-number">1.</span> <span class="nav-text">SOA架构</span></a></li></ol></div>
             
 
           </div>
@@ -831,7 +737,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.8k</span>
+    <span title="Site words total count">3.9k</span>
   
 </div>
 
@@ -855,7 +761,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.8k字</span>
+  <span class="post-count">博客全站共3.9k字</span>
 </div>
 
         
